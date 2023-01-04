@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My First Kotlin Application</string>
+    <string name="offers_view">Offers View</string>
+    <string name="submit">Submit</string>
+    <string name="enter_your_name_here">Enter your name here</string>
+    <string name="kotlin_say_hello">Kotlin Say Hello</string>
+</resources>
