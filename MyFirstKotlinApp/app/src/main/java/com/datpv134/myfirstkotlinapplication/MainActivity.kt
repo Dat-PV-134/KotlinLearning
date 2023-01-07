@@ -3,6 +3,7 @@ package com.datpv134.myfirstkotlinapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.widget.Button
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i("MTag", "Main Activity : onCreate")
 
         val tvHello = findViewById<TextView>(R.id.tvHello)
         val etName = findViewById<EditText>(R.id.etName)
@@ -45,5 +47,35 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("user", enteredName)
             startActivity(intent)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("MTag", "Main Activity : onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("MTag", "Main Activity : onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("MTag", "Main Activity : onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("MTag", "Main Activity : onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("MTag", "Main Activity : onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("MTag", "Main Activity : onRestart")
     }
 }
