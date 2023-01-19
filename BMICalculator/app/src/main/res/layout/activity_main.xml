@@ -187,7 +187,6 @@
                 android:id="@+id/tvIndex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="24.35"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="60sp"
@@ -197,7 +196,6 @@
                 android:id="@+id/tvResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="You are healthy"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="40sp"
@@ -207,7 +205,6 @@
                 android:id="@+id/tvInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="(normal range is 18.5 - 24.9)"
                 android:textAlignment="center"
                 android:textColor="@color/text_hint"
                 android:textSize="20sp" />
