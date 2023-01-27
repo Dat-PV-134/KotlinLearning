@@ -11,25 +11,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null
-    private lateinit var tvPlayed: TextView
-    private lateinit var tvDue: TextView
     private lateinit var seekBar: SeekBar
     private lateinit var runnable: Runnable
     private lateinit var handler: Handler
+    private lateinit var tvPlayed: TextView
+    private lateinit var tvDue: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        seekBar = findViewById(R.id.sbPlaying)
         handler = Handler(Looper.getMainLooper())
+        tvPlayed = findViewById<TextView>(R.id.tvPlayed)
+        tvDue = findViewById<TextView>(R.id.tvDue)
 
         val fabPlay = findViewById<FloatingActionButton>(R.id.fabPlay)
-        val fabPause = findViewById<FloatingActionButton>(R.id.fabPause)
-        val fabStop = findViewById<FloatingActionButton>(R.id.fabStop)
-        tvPlayed = findViewById(R.id.tvPlayed)
-        tvDue = findViewById(R.id.tvDue)
-
         fabPlay.setOnClickListener {
             if (mediaPlayer == null) {
                 mediaPlayer = MediaPlayer.create(this, R.raw.clapping)
@@ -39,10 +35,12 @@ class MainActivity : AppCompatActivity() {
             mediaPlayer?.start()
         }
 
+        val fabPause = findViewById<FloatingActionButton>(R.id.fabPause)
         fabPause.setOnClickListener {
             mediaPlayer?.pause()
         }
 
+        val fabStop = findViewById<FloatingActionButton>(R.id.fabStop)
         fabStop.setOnClickListener {
             if (mediaPlayer != null) {
                 mediaPlayer?.stop()
@@ -58,7 +56,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeSeekBar() {
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        seekBar = findViewById(R.id.sbPlaying)
+        seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, process: Int, fromUser: Boolean) {
                 if (fromUser) mediaPlayer?.seekTo(process)
             }
@@ -70,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(p0: SeekBar?) {
 
             }
+
         })
 
         seekBar.max = mediaPlayer!!.duration
