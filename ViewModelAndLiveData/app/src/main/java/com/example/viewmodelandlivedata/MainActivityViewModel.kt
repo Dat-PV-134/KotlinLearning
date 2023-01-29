@@ -1,11 +1,16 @@
 package com.example.viewmodelandlivedata
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
-    var count = 0
+    var count = MutableLiveData<Int>()
+
+    init {
+        count.value = 0
+    }
 
     fun update() {
-        ++count
+        count.value = (count.value)?.plus(1)
     }
 }
