@@ -1,12 +1,9 @@
 package com.example.studentregister
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.studentregister.databinding.ActivityMainBinding
 import com.example.studentregister.databinding.ListItemBinding
 import com.example.studentregister.db.Student
 
@@ -33,7 +30,7 @@ class StudentRecyclerViewAdapter(private val onClickItem:(Student) -> Unit) : Re
 
 }
 
-class StudentViewHoler(private val binding: ListItemBinding) : ViewHolder(binding) {
+class StudentViewHoler(private val binding: ListItemBinding) : ViewHolder(binding.root) {
     fun bind(student: Student, onClickItem:(Student) -> Unit) {
         binding.apply {
             tvName.text = student.name

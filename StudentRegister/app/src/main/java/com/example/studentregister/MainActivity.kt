@@ -3,12 +3,8 @@ package com.example.studentregister
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.studentregister.databinding.ActivityMainBinding
 import com.example.studentregister.db.Student
 import com.example.studentregister.db.StudentDatabase
