@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.studentregister.databinding.ActivityMainBinding
+import com.example.studentregister.databinding.ListItemBinding
 import com.example.studentregister.db.Student
 
 class StudentRecyclerViewAdapter(private val onClickItem:(Student) -> Unit) : RecyclerView.Adapter<StudentViewHoler>() {
@@ -17,9 +19,8 @@ class StudentRecyclerViewAdapter(private val onClickItem:(Student) -> Unit) : Re
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHoler {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val listItem = layoutInflater.inflate(R.layout.list_item, parent, false)
-        return StudentViewHoler(listItem)
+        val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return StudentViewHoler(binding)
     }
 
     override fun getItemCount(): Int {
@@ -32,15 +33,15 @@ class StudentRecyclerViewAdapter(private val onClickItem:(Student) -> Unit) : Re
 
 }
 
-class StudentViewHoler(private val view: View) : ViewHolder(view) {
+class StudentViewHoler(private val binding: ListItemBinding) : ViewHolder(binding) {
     fun bind(student: Student, onClickItem:(Student) -> Unit) {
-        val tvName = view.findViewById<TextView>(R.id.tvName)
-        val tvEmail = view.findViewById<TextView>(R.id.tvEmail)
-        tvName.text = student.name
-        tvEmail.text = student.email
+        binding.apply {
+            tvName.text = student.name
+            tvEmail.text = student.email
 
-        view.setOnClickListener {
-            onClickItem(student)
+            root.setOnClickListener {
+                onClickItem(student)
+            }
         }
     }
 }
