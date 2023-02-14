@@ -10,6 +10,8 @@ class MyBackGroundService : Service() {
 
     companion object {
         const val TAG = "MyTag"
+        const val NAME = "name"
+        const val AGE = "age"
     }
 
     init {
@@ -18,6 +20,9 @@ class MyBackGroundService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.e(TAG, "Service started")
+        val name = intent?.getStringExtra(NAME)
+        val age = intent?.getIntExtra(AGE, 0)
+        Log.e(TAG, "He is $name and he is $age year old now")
         return START_STICKY
     }
 

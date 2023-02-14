@@ -16,14 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val serviceIntent = Intent(this, MyBackGroundService::class.java)
+        serviceIntent.putExtra(MyBackGroundService.NAME, "Dat")
+        serviceIntent.putExtra(MyBackGroundService.AGE, 20)
 
         binding.btnStart.setOnClickListener {
-            Log.e(TAG, "Starting Service")
+            Log.e(MyBackGroundService.TAG, "Starting Service")
             startService(serviceIntent)
         }
 
         binding.btnStop.setOnClickListener {
-            Log.e(TAG, "Stopping service")
+            Log.e(MyBackGroundService.TAG, "Stopping service")
             stopService(serviceIntent)
         }
     }
