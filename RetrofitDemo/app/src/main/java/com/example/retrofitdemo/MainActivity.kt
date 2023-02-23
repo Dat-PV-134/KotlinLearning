@@ -2,6 +2,7 @@ package com.example.retrofitdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.liveData
@@ -24,7 +25,28 @@ class MainActivity : AppCompatActivity() {
             btnGetByUser.setOnClickListener {
                 getAlbumByUserId(3)
             }
+
+            btnGetTitleOfId3.setOnClickListener {
+                getTitleOfId3()
+            }
         }
+    }
+
+    private fun getTitleOfId3() {
+        val restService = RetrofitInstance.getRetrofitInstance().create(AlbumService::class.java)
+
+        val responseLiveData: LiveData<Response<AlbumItem>> = liveData {
+            val response = restService.getId3(3)
+            emit(response)
+        }
+
+        responseLiveData.observe(this, Observer {
+            Toast.makeText(
+                this,
+                it.body()?.title,
+                Toast.LENGTH_SHORT
+            ).show()
+        })
     }
 
     private fun getAlbumByUserId(i: Int) {
@@ -41,7 +63,8 @@ class MainActivity : AppCompatActivity() {
             if (albumList != null) {
                 while (albumList.hasNext()) {
                     val albumItem = albumList.next()
-                    val strAlbum = "User ID: ${albumItem.userId}" + "\n" + "ID: ${albumItem.id}" + "\n" + "Title: ${albumItem.title}" + "\n\n"
+                    val strAlbum =
+                        "User ID: ${albumItem.userId}" + "\n" + "ID: ${albumItem.id}" + "\n" + "Title: ${albumItem.title}" + "\n\n"
                     binding.tvAlbums.append(strAlbum)
                 }
             }
@@ -62,7 +85,8 @@ class MainActivity : AppCompatActivity() {
             if (albumList != null) {
                 while (albumList.hasNext()) {
                     val albumItem = albumList.next()
-                    val strAlbum = "User ID: ${albumItem.userId}" + "\n" + "ID: ${albumItem.id}" + "\n" + "Title: ${albumItem.title}" + "\n\n"
+                    val strAlbum =
+                        "User ID: ${albumItem.userId}" + "\n" + "ID: ${albumItem.id}" + "\n" + "Title: ${albumItem.title}" + "\n\n"
                     binding.tvAlbums.append(strAlbum)
                 }
             }
