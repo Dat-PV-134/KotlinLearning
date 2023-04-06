@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerView()
     }
-
     private fun saveStudentData() {
         binding.apply {
             viewModel.insertStudent(
