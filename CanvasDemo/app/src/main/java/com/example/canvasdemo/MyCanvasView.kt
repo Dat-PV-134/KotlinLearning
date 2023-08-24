@@ -62,7 +62,7 @@ class MyCanvasView(context: Context) : View(context) {
         val dx = abs(motionTouchEventX - currentX)
         val dy = abs(motionTouchEvenY - currentY)
         if (dx >= touchTolerance || dy >= touchTolerance) {
-            path.quadTo(currentX, currentY, motionTouchEventX, motionTouchEvenY)
+            path.quadTo(currentX, currentY, (motionTouchEventX + currentX) / 2, (motionTouchEvenY + currentY) / 2)
             currentX = motionTouchEventX
             currentY = motionTouchEvenY
             extraCanvas.drawPath(path, paint)

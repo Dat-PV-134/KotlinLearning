@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_10sdp"
+    android:padding="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/classificationIcon"
+        android:src="@drawable/ic_pet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvClassificationName"
+        android:layout_width="wrap_content"
+        android:text="Pets"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/classificationIcon"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/iconFixClassification"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_note_24"
+        android:layout_toStartOf="@id/iconDeleteClassification"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/iconDeleteClassification"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_cancel_24"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

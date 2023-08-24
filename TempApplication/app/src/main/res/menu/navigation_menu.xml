@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/amount_of_water_needed_to_drink"
+        android:title="@string/amount_of_water_needed_to_drink"
+        android:icon="@drawable/ic_water_need"
+        />
+
+    <item
+        android:id="@+id/todoList"
+        android:title="@string/list_todo_title"
+        android:icon="@drawable/ic_todolist"
+        />
+
+    <item
+        android:id="@+id/moneyManagent"
+        android:title="@string/money_management"
+        android:icon="@drawable/ic_money_management"
+        />
+</menu>

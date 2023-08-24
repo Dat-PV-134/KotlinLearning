@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_icon_background_color">#4684E3</color>
+
+    <color name="calculation_error_color">#F44B3F</color>
+
+    <!-- Normal Theme -->
+    <color name="foreground_color">#EFEFEF</color>
+    <color name="background_color">#fff</color>
+    <color name="history_background_color">#fff</color>
+    <color name="text_color">#000</color>
+    <color name="text_second_color">#595959</color>
+    <color name="text_third_color">#7E7E7E</color>
+    <color name="button_color">#EFEFEF</color>
+    <color name="button_symbol_color">#B4D2E4</color>
+    <color name="button_clear_color">#B7DABD</color>
+    <color name="button_equals_color">#DCB5C5</color>
+    <color name="button_ripple_color">#C3C3C3</color>
+
+    <!-- AMOLED Theme -->
+    <color name="amoled_foreground_color">#000</color>
+    <color name="amoled_background_color">#000</color>
+    <color name="amoled_history_background_color">#000</color>
+    <color name="amoled_text_color">#EFEFEF</color>
+    <color name="amoled_text_second_color">#BDBDBD</color>
+    <color name="amoled_text_third_color">#B1B1B1</color>
+    <color name="amoled_button_color">#000</color>
+    <color name="amoled_button_symbol_color">#000</color>
+    <color name="amoled_button_clear_color">#000</color>
+    <color name="amoled_button_equals_color">#000</color>
+    <color name="amoled_button_ripple_color">#9E9E9E</color>
+    <color name="amoled_separator_color">#EFEFEF</color>
+
+    <!--    todolist color  -->
+    <color name="time_color">#599EC7</color>
+    <color name="icon_color">#5EA4DC</color>
+    <color name="out_of_deadline_color">#DCB5C5</color>
+    <color name="done_color">#AAA3A3</color>
+    <color name="item_to_do">#2EEA0F</color>
+
+    <!-- money management  -->
+    <color name="pie_chart_color1">#C0FF8C</color>
+    <color name="pie_chart_color2">#FFF78C</color>
+    <color name="pie_chart_color3">#FFD08C</color>
+    <color name="pie_chart_color4">#8CEAFF</color>
+    <color name="pie_chart_color5">#8C8C9D</color>
+</resources>
